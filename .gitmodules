@@ -1,0 +1,3 @@
+[submodule "Assets/DG-Pack"]
+	path = Assets/DG-Pack
+	url = https://github.com/dgboy/dg-pack.git
