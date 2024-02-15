@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Content/UI/main.uss?fileID=7433441132597879392&amp;guid=62b65deeb44d38e4b96d40d50c6ed642&amp;type=3#main" />
-    <ui:VisualElement style="flex-grow: 1; flex-shrink: 1;">
-        <ui:VisualElement name="screen" style="flex-grow: 1; background-image: url(&apos;project://database/Assets/Content/Home/home.png?fileID=2800000&amp;guid=07f9995743db4ab41848c2a9ace8dea5&amp;type=3#home&apos;);" />
-    </ui:VisualElement>
-</ui:UXML>

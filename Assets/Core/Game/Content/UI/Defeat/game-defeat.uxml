@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Content/Sample/main.uss?fileID=7433441132597879392&amp;guid=62b65deeb44d38e4b96d40d50c6ed642&amp;type=3#main" />
+    <ui:VisualElement name="defeat" class="overlay modal">
+        <ui:VisualElement name="container" class="block-w" style="flex-grow: 1;">
+            <ui:VisualElement name="msg-block" class="space" style="flex-grow: 1; justify-content: space-around;">
+                <ui:Label text="Исход" name="title" tabindex="-1" display-tooltip-when-elided="true" class="label" style="border-left-color: rgba(0, 0, 0, 0); border-right-color: rgba(0, 0, 0, 0); border-top-color: rgba(0, 0, 0, 0); border-bottom-color: rgba(0, 0, 0, 0); font-size: 100px;" />
+                <ui:Label text="Послание..." name="last-message" tabindex="-1" display-tooltip-when-elided="true" class="text" style="flex-shrink: 1;" />
+                <ui:Button text="Конец" name="restart" display-tooltip-when-elided="true" class="btn" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

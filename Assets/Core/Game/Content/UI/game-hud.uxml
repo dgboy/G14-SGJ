@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="game-defeat" src="project://database/Assets/Content/Game/UI/Defeat/game-defeat.uxml?fileID=9197481963319205126&amp;guid=92e37e8d3eab6e84ab603981be4de98e&amp;type=3#game-defeat" />
+    <Style src="project://database/Assets/Content/Sample/main.uss?fileID=7433441132597879392&amp;guid=62b65deeb44d38e4b96d40d50c6ed642&amp;type=3#main" />
+    <ui:VisualElement name="top-bar" class="block-h">
+        <ui:VisualElement name="fear" class="block-h" style="flex-grow: 1; align-items: center;">
+            <ui:VisualElement name="fear-icon" class="top-icon" />
+        </ui:VisualElement>
+        <ui:VisualElement name="hearing" class="block-h" style="flex-grow: 1; align-items: center;">
+            <ui:VisualElement name="hearing-icon" class="top-icon" />
+            <ui:Label text="&gt;&gt;&gt;" name="hearing-value" tabindex="-1" display-tooltip-when-elided="true" class="text-white label" style="-unity-font-definition: url(&apos;project://database/Assets/Content/Common/Fonts/BarcadeBrawlRegular.ttf?fileID=12800000&amp;guid=389f9699c42ddd2408c2b80f17a07181&amp;type=3#BarcadeBrawlRegular&apos;); font-size: 24px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="villagers" class="block-h" style="flex-grow: 1; justify-content: flex-end; align-items: center;">
+            <ui:VisualElement name="villagers-icon" class="top-icon" />
+            <ui:Label name="villagers-value" tabindex="-1" text="10" display-tooltip-when-elided="true" class="text-white label" />
+        </ui:VisualElement>
+        <ui:VisualElement name="lifetime" class="block-h" style="flex-grow: 1; justify-content: flex-end; align-items: center;">
+            <ui:VisualElement name="lifetime-icon" class="top-icon" />
+            <ui:Label name="lifetime-value" tabindex="-1" text="10:00" display-tooltip-when-elided="true" class="text-white label" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="game-defeat" name="defeat-modal" class="modal" style="visibility: hidden;" />
+</ui:UXML>

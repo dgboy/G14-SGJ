@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d5636d5742496ebb10f5508fac7341, type: 3}
+  m_Name: General
+  m_EditorClassIdentifier: Assembly-CSharp::StaticData
+  player:
+    liveCount: 2
+    tank:
+      prefab: {fileID: 2157107099513661520, guid: 9c64b529c1208914da53e03446560409, type: 3}
+      speed: 2
+      health: 1
+      cooldown: 1
+  enemy:
+    spawn:
+      vfx: {fileID: 8581552680253165657, guid: 891af53dcdbe5bb4cad6b317b69096c7, type: 3}
+    units:
+    - type: 0
+      score: 100
+      tank:
+        prefab: {fileID: 2157107099513661520, guid: ed559c5e6954c7d42bd519e6bea1fc6e, type: 3}
+        speed: 2
+        health: 1
+        cooldown: 4
+    - type: 1
+      score: 200
+      tank:
+        prefab: {fileID: 4181663469314950093, guid: 77085887fc7a49b4eabe5568e0782aee, type: 3}
+        speed: 4
+        health: 1
+        cooldown: 4
+    - type: 2
+      score: 300
+      tank:
+        prefab: {fileID: 4181663469314950093, guid: c803d7474bde4de4babe095292b47faa, type: 3}
+        speed: 3
+        health: 1
+        cooldown: 1
+    - type: 3
+      score: 400
+      tank:
+        prefab: {fileID: 4181663469314950093, guid: bdcc7a98520349c4488c31ce42969f19, type: 3}
+        speed: 1
+        health: 4
+        cooldown: 4
+  bullet:
+    prefab: {fileID: 8033456805991857986, guid: d93baa97178096c4fa02546cc0240e66, type: 3}
+    speed: 4
+    offset: 0.6
+    lifespan: 3
+    sound: {fileID: 8300000, guid: d5cc03a0ce957b34187997cdb9a5b49d, type: 3}
+  hit:
+    vfx: {fileID: 1398879941886703102, guid: fdbf825ded8988c41ab1f4a3dd9e50ba, type: 3}
+    deathVfx: {fileID: 1398879941886703102, guid: cb7031c26be09f343aec4917d95f39e5, type: 3}
+    deathSound: {fileID: 8300000, guid: 3dd085eee3b09e04695918e7dc69e44f, type: 3}
+    armorSound: {fileID: 8300000, guid: f59686aea62cc604d93406a81afab0c9, type: 3}
+  map:
+    blocks:
+    - type: 0
+      hitSound: {fileID: 8300000, guid: 98665c756d0f2314aaac2db1d58633fe, type: 3}
+    - type: 1
+      hitSound: {fileID: 8300000, guid: c3dc675504198134aba40544584973f3, type: 3}
+    - type: 2
+      hitSound: {fileID: 8300000, guid: 1ce7387e395a6704dbb69743f0f641b7, type: 3}
+  bonus:
+    prefab: {fileID: 7400413665235108052, guid: 02d185261c1b9da439c23c61880aedf8, type: 3}
+    spawnSound: {fileID: 8300000, guid: cc7a314b7b1d21a43a02dd11474fd78b, type: 3}
+    activationSound: {fileID: 8300000, guid: e63b50914e74c1646a5d332c98de6310, type: 3}
+    cooldown: 10
+    timeStopDuration: 10
+    invincible:
+      prefab: {fileID: 7330079708035283611, guid: c88d09979ce84bf47bc9506a99fd6310, type: 3}
+      duration: 10
+    current: 5
+    items:
+    - type: 1
+      sprite: {fileID: -1383855295, guid: 8b9e74f4683f67a4fa58ad6730242ffc, type: 3}
+    - type: 0
+      sprite: {fileID: 497986114, guid: 8b9e74f4683f67a4fa58ad6730242ffc, type: 3}
+    - type: 2
+      sprite: {fileID: 567725034, guid: 8b9e74f4683f67a4fa58ad6730242ffc, type: 3}
+    - type: 6
+      sprite: {fileID: 1430482885, guid: 8b9e74f4683f67a4fa58ad6730242ffc, type: 3}
+    - type: 3
+      sprite: {fileID: -1501504370, guid: 8b9e74f4683f67a4fa58ad6730242ffc, type: 3}
+    - type: 4
+      sprite: {fileID: 1501150149, guid: 8b9e74f4683f67a4fa58ad6730242ffc, type: 3}
+  exodus:
+    states:
+    - id: 1
+      jingle: {fileID: 8300000, guid: db7d3103df61cce4bbb55972ccdbe4be, type: 3}
+      title: "\u041F\u043E\u0431\u0435\u0434\u0430"
+      message: "\u0414\u0435\u043B\u043E \u043E\u043A\u0430\u0437\u0430\u043B\u043E\u0441\u044C
+        \u0441\u043B\u043E\u0436\u043D\u044B\u043C, \u043D\u043E \u044F \u0441\u043F\u0440\u0430\u0432\u0438\u043B\u0441\u044F.
+        \u041D\u0430\u0434\u0435\u044E\u0441\u044C \u0442\u0435\u043F\u0435\u0440\u044C-\u0442\u043E
+        \u044F \u0441\u043C\u043E\u0433\u0443 \u0443\u0439\u0442\u0438 \u043D\u0430
+        \u0437\u0430\u0441\u043B\u0443\u0436\u0435\u043D\u043D\u044B\u0439 \u043F\u043E\u043A\u043E\u0439..."
+      messageColor: {r: 1, g: 0.64705884, b: 0, a: 1}
+    - id: 2
+      jingle: {fileID: 8300000, guid: fc91b5f8e7c52ac43a2e83f8001c7fdb, type: 3}
+      title: "\u041F\u043E\u0440\u0430\u0436\u0435\u043D\u0438\u0435"
+      message: "\u042D\u0442\u0430 \u0434\u0435\u0440\u0435\u0432\u043D\u044F \u043B\u0438\u0448\u044C
+        \u043D\u0430\u0447\u0430\u043B\u043E, \u043A\u0430\u043A \u0442\u043E\u043B\u044C\u043A\u043E
+        \u044F \u043D\u0430\u0431\u0435\u0440\u0443 \u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E\u0435
+        \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0441\u043B\u0443\u0433,
+        \u044D\u0442\u043E\u0442 \u043C\u0438\u0440 \u0431\u0443\u0434\u0435\u0442
+        \u0441\u043B\u044B\u0448\u0430\u0442\u044C \u043B\u0438\u0448\u044C \u0437\u0432\u0443\u043A
+        \u0430\u0433\u043E\u043D\u0438\u0438. \u0425\u0410-\u0425\u0410-\u0425\u0410!"
+      messageColor: {r: 1, g: 0, b: 0, a: 1}
+    lifetime: 5
+  sfx: {fileID: 8926986316869869613, guid: 277ce7d5383ca6542b5260a1cd4e5640, type: 3}
+  holyStuffPrefab: {fileID: 4465485542589989536, guid: e3bbff536ca4e6046b3c8d0f1a4ac116, type: 3}
+  hearing:
+    low:
+    - {fileID: 8300000, guid: 26a9e99874a60f74dbddd83880744368, type: 3}
+    - {fileID: 8300000, guid: 665c453ec8fc6d244aec404d2ee57f8f, type: 3}
+    middle:
+    - {fileID: 8300000, guid: 9934591f609e7f8418bf614379045cdf, type: 3}
+    - {fileID: 8300000, guid: f96fc181e4d22e645987b03641c9fbf9, type: 3}
+    - {fileID: 8300000, guid: 63badda64ff4c3746bf0911e6472a4bb, type: 3}
+    high:
+    - {fileID: 8300000, guid: 445ece033fb2d1648b91a319db8342ee, type: 3}
+    - {fileID: 8300000, guid: 053450716a8658b4b805450d19a69567, type: 3}
+    - {fileID: 8300000, guid: 500dd4658f1674044ab79f2b59647392, type: 3}
+    - {fileID: 8300000, guid: 185e7067b2da86e4c835c7b56c242d4f, type: 3}
+    - {fileID: 8300000, guid: 5c50ac18f6ce3e345a91324bde2c8cb9, type: 3}
+  bansheePrefab: {fileID: -4116448015841399692, guid: c63e573d1f1afe540853f493f15186a9, type: 3}
+  villagerCounter: 10
+  villagerPrefab: {fileID: 2472121297423138949, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}
