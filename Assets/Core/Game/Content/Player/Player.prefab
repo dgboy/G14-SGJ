@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 6412969269089971003}
   - component: {fileID: 6720547427623350078}
   m_Layer: 0
-  m_Name: hearing
+  m_Name: Hearing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

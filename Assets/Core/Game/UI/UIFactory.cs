@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Core.Common.Data;
 using Core.Common.UI;
 using Core.Game.Exodus;
+using Core.Home;
 using DG_Pack.Services.FSM;
-using UnityEngine;
 using UnityEngine.UIElements;
 using VContainer;
 
@@ -29,14 +29,9 @@ namespace Core.Game.UI {
                     new TextHandler("title", Exodus.Title),
                     new TextHandler("last-message", Exodus.Message),
                     new FontColor("last-message", Exodus.MessageColor),
-                    new ClickHandler("restart", ExitGame),
+                    new ClickHandler("restart", StateMachine.Enter<HomeState>),
                 }
             ),
         };
-
-        private static void ExitGame() {
-            Debug.Log("Exit");
-            Application.Quit();
-        }
     }
 }
