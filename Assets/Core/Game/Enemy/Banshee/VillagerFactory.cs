@@ -17,7 +17,6 @@ namespace Core.Game.Enemy.Banshee {
         private void Start() {
             _cooldown = new Cooldown(this);
             _cooldown.Start(3f);
-            Data.PossessedVillagers.Value = Data.VillagerCounter.Value = Config.villagerCounter;
         }
         private void Update() {
             if (_cooldown.IsExpired && Data.VillagerCounter.Value > 0)

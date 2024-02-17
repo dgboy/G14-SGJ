@@ -1,6 +1,7 @@
 using Core.Common.Data;
 using Core.Game.Respawn;
 using Core.Game.Tank;
+using DG_Pack.Camera;
 using Leopotam.EcsLite;
 using UnityEngine;
 
@@ -12,8 +13,10 @@ namespace Core.Game.Player {
             LevelContext context,
             RuntimeData data,
             CharacterFactory characterFactory,
-            HolyStuffFactory holyStuffFactory
+            HolyStuffFactory holyStuffFactory,
+            ICameraService camera
         ) {
+            _camera = camera;
             _holyStuffFactory = holyStuffFactory;
             CharacterFactory = characterFactory;
             Config = config;
@@ -33,6 +36,7 @@ namespace Core.Game.Player {
         private readonly EcsPool<CPlayer> _players;
         private readonly EcsPool<CLife> _lives;
         private readonly HolyStuffFactory _holyStuffFactory;
+        private readonly ICameraService _camera;
 
 
         public void Create() {
@@ -47,6 +51,8 @@ namespace Core.Game.Player {
 
             _holyStuffFactory.Create(sample.transform);
             sample.GetComponentInChildren<Hearing>().Init(Config, Data);
+            
+            _camera.Target = sample.transform;
         }
     }
 }

@@ -4,14 +4,10 @@ using UnityEngine;
 namespace Core.Game.Common.Behaviors {
     public class DrawRadar : MonoBehaviour {
         public LineRenderer lineDrawer;
+        public float radius = 3f;
         public float thetaScale = 0.01f;
-        public float Radius {
-            get => _radius;
-            set => _radius = value * 2f;
-        }
         private int _size;
         private float _theta;
-        private float _radius = 3f;
 
 
         [Obsolete("Obsolete")]
@@ -22,8 +18,8 @@ namespace Core.Game.Common.Behaviors {
 
             for (int i = 0; i < _size; i++) {
                 _theta += (2.0f * Mathf.PI * thetaScale);
-                float x = Radius * Mathf.Cos(_theta);
-                float y = Radius * Mathf.Sin(_theta);
+                float x = radius * Mathf.Cos(_theta);
+                float y = radius * Mathf.Sin(_theta);
                 lineDrawer.SetPosition(i, transform.position + new Vector3(x, y, 0));
             }
         }

@@ -19,6 +19,7 @@ using Core.Game.Map.Mine;
 using Core.Game.Player;
 using Core.Game.Respawn;
 using Core.Game.Tank;
+using DG_Pack.Camera;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using UnityEngine;
@@ -106,7 +107,7 @@ namespace Core.Game {
                 .Inject(Data)
                 .Inject(characterFactory)
                 .Inject(Resolver.Resolve<ExodusService>())
-                .Inject(new PlayerCharacterFactory(World, Config, Context, Data, characterFactory, holyStuffFactory))
+                .Inject(new PlayerCharacterFactory(World, Config, Context, Data, characterFactory, holyStuffFactory, Resolver.Resolve<ICameraService>()))
                 .Inject(new EnemyTankFactory(World, characterFactory))
                 .Inject(new VfxFactory(World))
                 .Inject(new SfxFactory(Config, World))
@@ -116,8 +117,6 @@ namespace Core.Game {
                 .Inject(new RedBarrelFactory(World, Config))
                 .Inject(new MineFactory(World))
                 .Init();
-
-            OtherLogic();
         }
 
         public void FixedTick() => _fixedUpdateSystems?.Run();
@@ -135,10 +134,6 @@ namespace Core.Game {
             _systems = null;
             World?.Destroy();
             World = null;
-        }
-        
-        private void OtherLogic() {
-            
         }
     }
 }

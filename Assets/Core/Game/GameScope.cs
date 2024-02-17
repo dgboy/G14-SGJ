@@ -2,6 +2,7 @@ using Core.Common.Data;
 using Core.Game.Common;
 using Core.Game.Exodus;
 using Core.Game.UI;
+using DG_Pack.Camera;
 using VContainer;
 using VContainer.Unity;
 
@@ -18,6 +19,8 @@ namespace Core.Game {
 
             builder.RegisterComponentInHierarchy<LevelContext>();
             builder.RegisterComponentInHierarchy<UIHandler>();
+            builder.RegisterComponentInHierarchy<SmoothCamera>().As<ICameraService>();
+
             builder.RegisterEntryPoint<GameStartup>();
         }
     }

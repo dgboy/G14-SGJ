@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,11 +11,12 @@ namespace Core.Game.Player {
         private float Delay { get; set; }
         private Cooldown _cooldown;
 
-
+        
         public void Initialize(AudioClip[] clips, int id) {
             _clips = clips;
             Delay = 3f * (id + 1);
             _cooldown = new Cooldown(this);
+            enabled = false;//_clips is { Length: > 0 };
         }
         private void Update() {
             if (!_cooldown.IsExpired)

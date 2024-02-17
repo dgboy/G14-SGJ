@@ -19,6 +19,8 @@ MonoBehaviour:
       speed: 2
       health: 1
       cooldown: 1
+    fearLevel: 1
+    hearingLevel: 1
   enemy:
     spawn:
       vfx: {fileID: 8581552680253165657, guid: 891af53dcdbe5bb4cad6b317b69096c7, type: 3}
