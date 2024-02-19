@@ -12,7 +12,7 @@ namespace Core.Game.Enemy.Spawn {
         private readonly EcsCustomInject<GeneralConfig> _config = default;
         private readonly EcsCustomInject<LevelContext> _context = default;
         private readonly EcsCustomInject<RuntimeData> _data = default;
-        private readonly EcsCustomInject<EnemyTankFactory> _enemyFactory = default;
+        // private readonly EcsCustomInject<EnemyTankFactory> _enemyFactory = default;
         private readonly EcsCustomInject<VfxFactory> _vfxFactory = default;
         private readonly EcsFilterInject<Inc<CEnemy>> _filter = default;
 
@@ -42,7 +42,7 @@ namespace Core.Game.Enemy.Spawn {
             if (Time.time <= _expired)
                 return;
 
-            _enemyFactory.Value.Create(_units[Current], _spawner);
+            // _enemyFactory.Value.Create(_units[Current], _spawner);
             Counter.Value--;
             _expired = 0;
         }

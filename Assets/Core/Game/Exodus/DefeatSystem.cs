@@ -1,33 +1,30 @@
 using System;
 using Core.Common.Data;
-using Leopotam.EcsLite;
-using Leopotam.EcsLite.Di;
+using VContainer;
+using VContainer.Unity;
 
 namespace Core.Game.Exodus {
-    public class DefeatSystem : IEcsInitSystem, IEcsRunSystem {
-        private readonly EcsCustomInject<GeneralConfig> _config = default;
-        private readonly EcsCustomInject<RuntimeData> _data = default;
-        private readonly EcsCustomInject<ExodusService> _exodus = default;
-        // private readonly EcsFilterInject<Inc<CPlayer>> _playerFilter = default;
-        // private readonly EcsFilterInject<Inc<CBase>> _baseFilter = default;
+    public class DefeatSystem : IInitializable, ITickable {
+        [Inject] private readonly GeneralConfig _config;
+        [Inject] private readonly RuntimeData _data;
+        [Inject] private readonly ExodusService _exodus;
 
-        private RuntimeData Data => _data.Value;
         private DateTime _exodusTime;
 
-        public void Init(IEcsSystems systems) {
-            _exodusTime = DateTime.Now.AddMinutes(_config.Value.exodus.lifetime);
-            Data.LifeTime.Value = _exodusTime - DateTime.Now;
+        public void Initialize() {
+            _exodusTime = DateTime.Now.AddMinutes(_config.exodus.lifetime);
+            _data.LifeTime.Value = _exodusTime - DateTime.Now;
         }
-        public void Run(IEcsSystems systems) {
-            if (_exodus.Value.Has)
+        public void Tick() {
+            if (_exodus.Has)
                 return;
 
-            if (Data.LifeTime.Value <= TimeSpan.Zero || Data.FearLevel.Value <= 0) {
-                _exodus.Value.Declare(ExodusID.Defeat);
+            if (_data.LifeTime.Value <= TimeSpan.Zero || _data.FearLevel.Value <= 0) {
+                _exodus.Declare(ExodusID.Defeat);
                 return;
             }
 
-            Data.LifeTime.Value = _exodusTime - DateTime.Now;
+            _data.LifeTime.Value = _exodusTime - DateTime.Now;
         }
     }
 }

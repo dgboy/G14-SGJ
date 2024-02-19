@@ -1,25 +1,25 @@
 using Core.Common.Data;
 using DG.Tweening;
-using Leopotam.EcsLite;
-using Leopotam.EcsLite.Di;
+using VContainer;
+using VContainer.Unity;
 
 namespace Core.Game.Exodus {
-    public class VictorySystem : IEcsRunSystem {
-        private readonly EcsCustomInject<ExodusService> _exodus = default;
-        private readonly EcsCustomInject<RuntimeData> _data = default;
+    public class VictorySystem : ITickable {
+        [Inject] private readonly ExodusService _exodus;
+        [Inject] private readonly RuntimeData _data;
+
+        private bool HasPossessedVillagers => _data.PossessedVillagers.Value > 0;
         private Sequence _seq;
-        // private readonly EcsFilterInject<Inc<CEnemy>> _filter = default;
-        private bool HasPossessedVillagers => _data.Value.PossessedVillagers.Value > 0;
 
 
-        public void Run(IEcsSystems systems) {
-            if (_exodus.Value.Has || HasPossessedVillagers)
+        public void Tick() {
+            if (_exodus.Has || HasPossessedVillagers)
                 return;
 
-            _exodus.Value.Declare(ExodusID.Victory);
+            _exodus.Declare(ExodusID.Victory);
             // _seq = DOTween.Sequence();
             // _seq.PrependInterval(5f);
-            // _seq.AppendCallback(() => _exodus.Value.Declare(ExodusID.Victory));
+            // _seq.AppendCallback(() => _exodus.Declare(ExodusID.Victory));
         }
     }
 }

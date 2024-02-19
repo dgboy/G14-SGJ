@@ -5571,7 +5571,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113677537}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 414cf838fbd94233a9e7a15fa9930ded, type: 3}
   m_Name: 
@@ -5640,7 +5640,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1315990515
 Transform:
   m_ObjectHideFlags: 0
@@ -5747,7 +5747,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1789833818
 Transform:
   m_ObjectHideFlags: 0
@@ -6283,7 +6283,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3425878983940996966}
   - component: {fileID: 2418887398530781160}
-  - component: {fileID: 8622809214141205096}
   - component: {fileID: 3428844471566313163}
   - component: {fileID: 299914462914210245}
   - component: {fileID: 8622809214141205097}
@@ -6341,14 +6340,6 @@ PrefabInstance:
     - target: {fileID: 1754334014458325867, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095556031289051687, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}
-      propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2095556031289051687, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2472121297423138949, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}
       propertyPath: m_Name
@@ -6420,14 +6411,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c63e573d1f1afe540853f493f15186a9, type: 3}
---- !u!81 &8622809214141205096
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5646764920849718862}
-  m_Enabled: 1
 --- !u!114 &8622809214141205097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6450,5 +6433,5 @@ SceneRoots:
   - {fileID: 1880471934}
   - {fileID: 729655499}
   - {fileID: 1113677538}
-  - {fileID: 1238001922}
   - {fileID: 1835890352}
+  - {fileID: 1238001922}

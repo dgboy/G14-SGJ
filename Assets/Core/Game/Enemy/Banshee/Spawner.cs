@@ -1,10 +1,9 @@
 using Core.Common.Data;
-using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 
 namespace Core.Game.Enemy.Banshee {
-    public class VillagerFactory : MonoBehaviour, IFactory {
+    public class Spawner : MonoBehaviour {
         [Inject] private GeneralConfig Config { get; set; }
         [Inject] private RuntimeData Data { get; set; }
 
@@ -12,6 +11,7 @@ namespace Core.Game.Enemy.Banshee {
         private Cooldown _cooldown;
         private static readonly Vector3 Bounds = new(5f, 5f, 0);
         private float CooldownTime { get; set; } = 10f;
+        public IFactory Factory { get; set; }
 
 
         private void Start() {
@@ -19,17 +19,11 @@ namespace Core.Game.Enemy.Banshee {
             _cooldown.Start(3f);
         }
         private void Update() {
-            if (_cooldown.IsExpired && Data.VillagerCounter.Value > 0)
-                Create();
-        }
+            if (!_cooldown.IsExpired || Data.VillagerCounter.Value <= 0)
+                return;
 
-        public void Create() {
-            var position = new Vector3(Random.Range(0, Range), Random.Range(0, Range));// - Bounds;
-            var sample = Object.Instantiate(Config.villagerPrefab, position, Quaternion.identity).GetComponent<Villager>();
-            sample.Initialize(Data);
-            
+            Factory.Create();
             _cooldown.Start(CooldownTime);
-            Data.VillagerCounter.Value--;
         }
     }
 }
