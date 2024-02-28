@@ -16,14 +16,14 @@ namespace Core.Game.Map {
 
 
         public void Init(IEcsSystems systems) {
-            CreateBlock(Context.steelContainer, BlockType.Steel);
-            CreateBase(Context.baseContainer.GetChild(0));
-
-            foreach (Transform brick in Context.brickContainer) {
-                int id = CreateBlock(brick, BlockType.Brick);
-                ref var health = ref _healths.Value.Add(id);
-                health.value = 1;
-            }
+            // CreateBlock(Context.steelContainer, BlockType.Steel);
+            // CreateBase(Context.baseContainer.GetChild(0));
+            //
+            // foreach (Transform brick in Context.brickContainer) {
+            //     int id = CreateBlock(brick, BlockType.Brick);
+            //     ref var health = ref _healths.Value.Add(id);
+            //     health.value = 1;
+            // }
         }
         private void CreateBase(Transform block) {
             int id = CreateBlock(block, BlockType.Base);

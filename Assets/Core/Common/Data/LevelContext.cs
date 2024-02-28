@@ -12,9 +12,5 @@ namespace Core.Common.Data {
         public PlayerContext player;
         public EnemyContext enemy;
         public List<RedBarrel> redBarrels;
-        public Transform mineContainer;
-        public Transform brickContainer;
-        public Transform steelContainer;
-        public Transform baseContainer;
     }
 }

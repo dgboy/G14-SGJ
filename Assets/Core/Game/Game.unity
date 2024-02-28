@@ -213,10 +213,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  mineContainer: {fileID: 0}
-  brickContainer: {fileID: 0}
-  steelContainer: {fileID: 0}
-  baseContainer: {fileID: 0}
 --- !u!114 &100548392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5559,7 +5555,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113677537}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 020d8781366f45f49225792ab776cb51, type: 3}
   m_Name: 
