@@ -741,11 +741,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1459066545230102181, guid: 97e93de897be1a54692797df9220454e, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
+      value: 0.6362282
       objectReference: {fileID: 0}
     - target: {fileID: 1459066545230102181, guid: 97e93de897be1a54692797df9220454e, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
+      value: 0.0460589
       objectReference: {fileID: 0}
     - target: {fileID: 1459066545230102181, guid: 97e93de897be1a54692797df9220454e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -806,6 +806,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7899305525176169736, guid: 97e93de897be1a54692797df9220454e, type: 3}
   m_PrefabInstance: {fileID: 5114202300898035635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3242260549745833176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7640243723462226795, guid: 97e93de897be1a54692797df9220454e, type: 3}
+  m_PrefabInstance: {fileID: 5114202300898035635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175640301408171360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a8ca009b14008429f621808bba2086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5432376670234664590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 980348936130107709, guid: 97e93de897be1a54692797df9220454e, type: 3}
@@ -839,3 +850,6 @@ MonoBehaviour:
   body: {fileID: 805515671557382543}
   renderer: {fileID: 3127384218953626299}
   speed: 2
+  animator: {fileID: 3242260549745833176}
+  idleClip: {fileID: 7400000, guid: c419213127dbdca4aa1ca2f87e72c560, type: 2}
+  moveClip: {fileID: 7400000, guid: 6d5eaa93ca6bf4d4da758f8354e6057c, type: 2}
