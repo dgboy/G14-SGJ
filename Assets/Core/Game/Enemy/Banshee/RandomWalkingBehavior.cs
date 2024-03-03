@@ -1,10 +1,13 @@
+using Core.Game.Common.Systems;
 using UnityEngine;
 
 namespace Core.Game.Enemy.Banshee {
     public class RandomWalkingBehavior : MonoBehaviour {
+        public MovementAnimator animator;
         public float width = 10f;
         public float depth = 10f;
         public Vector3 origin;
+        public float speed = 5f;
 
         private Vector3 Target { get; set; }
 
@@ -13,11 +16,13 @@ namespace Core.Game.Enemy.Banshee {
             origin = Target = transform.position;
         }
         private void Update() {
-            if (Vector2.Distance(transform.position, Target) > 1f) {
+            bool inRange = Vector2.Distance(transform.position, Target) < 1f;
+            animator.Play(!inRange);
+
+            if (inRange)
                 Move();
-            } else {
+            else
                 Target = GetRandomPoint();
-            }
         }
 
         private Vector3 GetRandomPoint() {
@@ -26,8 +31,7 @@ namespace Core.Game.Enemy.Banshee {
         }
 
         private void Move() {
-            float step = Time.deltaTime * 5f;
-            transform.position = Vector2.MoveTowards(transform.position, Target, step);
+            transform.position = Vector2.MoveTowards(transform.position, Target, speed * Time.deltaTime);
         }
 
         private void OnDrawGizmos() {

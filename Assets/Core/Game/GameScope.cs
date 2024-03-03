@@ -19,7 +19,7 @@ namespace Core.Game {
             builder.Register<ExodusService>(Lifetime.Scoped).AsSelf().As<IInitializable>();
 
             builder.Register<HolyStuffFactory>(Lifetime.Singleton);
-            builder.Register<PlayerCharacterFactory>(Lifetime.Singleton);
+            builder.Register<PlayerActorFactory>(Lifetime.Singleton);
             builder.RegisterEntryPoint<DefeatSystem>();
             builder.RegisterEntryPoint<VictorySystem>();
 

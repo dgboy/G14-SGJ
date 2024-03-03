@@ -1,4 +1,3 @@
-using PowerTools;
 using UnityEngine;
 
 namespace Core.Game.Common.Systems {
@@ -6,23 +5,18 @@ namespace Core.Game.Common.Systems {
         public Rigidbody2D body;
         public new SpriteRenderer renderer;
         public float speed = 1f;
+        public MovementAnimator animator;
 
-        public SpriteAnim animator;
-        public AnimationClip idleClip;
-        public AnimationClip moveClip;
-
-        private static Vector2 Input => new(UnityEngine.Input.GetAxis("Horizontal"), UnityEngine.Input.GetAxis("Vertical"));
-        private AnimationClip CurrentAnimation => Input == Vector2.zero ? idleClip : moveClip;
+        public IDirection Direction { get; set; }
 
 
         public void FixedUpdate() {
-            body.velocity = Input * speed;
+            body.velocity = Direction.Value * speed;
 
-            if (!animator.IsPlaying(CurrentAnimation))
-                animator.Play(CurrentAnimation);
+            animator.Play(Direction.Value != Vector2.zero);
 
-            if (Input != Vector2.zero)
-                renderer.flipX = Input.x > 0;
+            if (Direction.Value != Vector2.zero)
+                renderer.flipX = Direction.Value.x > 0;
         }
     }
 }

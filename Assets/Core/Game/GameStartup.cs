@@ -11,7 +11,7 @@ namespace Core.Game {
         [Inject] private GeneralConfig Config { get; set; }
         [Inject] private LevelContext Context { get; set; }
         [Inject] private RuntimeData Data { get; set; }
-        [Inject] private PlayerCharacterFactory PlayerFactory { get; set; }
+        [Inject] private PlayerActorFactory PlayerFactory { get; set; }
 
 
         public void Start() {

@@ -11,7 +11,7 @@ namespace Core.Game.Enemy.Banshee {
         private const int Range = 10;
         private Cooldown _cooldown;
         private static readonly Vector3 Bounds = new(5f, 5f, 0);
-        private float CooldownTime { get; set; } = 10f;
+        private float CooldownTime { get; set; } = 20f;
 
 
         private void Start() {

@@ -755,6 +755,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.625
       objectReference: {fileID: 0}
+    - target: {fileID: 1872916534684155941, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -762,6 +766,10 @@ PrefabInstance:
     - target: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7640243723462226795, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7899305525176169736, guid: 97e93de897be1a54692797df9220454e, type: 3}
       propertyPath: m_Sprite
@@ -795,6 +803,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
       insertIndex: 7
       addedObject: {fileID: 988284906874693069}
+    - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 932736684346610072}
+    - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6805856635008683581}
   m_SourcePrefab: {fileID: 100100000, guid: 97e93de897be1a54692797df9220454e, type: 3}
 --- !u!50 &805515671557382543 stripped
 Rigidbody2D:
@@ -850,6 +864,31 @@ MonoBehaviour:
   body: {fileID: 805515671557382543}
   renderer: {fileID: 3127384218953626299}
   speed: 2
+  animator: {fileID: 6805856635008683581}
+--- !u!114 &932736684346610072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175640301408171360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce34b9b9c07474bb8da0ba3e4c79167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6805856635008683581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8175640301408171360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8aaae6f3afe4073887d1abedb4c6d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 3242260549745833176}
   idleClip: {fileID: 7400000, guid: c419213127dbdca4aa1ca2f87e72c560, type: 2}
   moveClip: {fileID: 7400000, guid: 6d5eaa93ca6bf4d4da758f8354e6057c, type: 2}

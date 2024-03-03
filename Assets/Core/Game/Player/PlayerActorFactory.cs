@@ -1,10 +1,11 @@
 using Core.Common.Data;
+using Core.Game.Common.Systems;
 using DG_Pack.Camera;
 using UnityEngine;
 
 namespace Core.Game.Player {
-    public class PlayerCharacterFactory {
-        public PlayerCharacterFactory(
+    public class PlayerActorFactory {
+        public PlayerActorFactory(
             GeneralConfig config,
             LevelContext context,
             RuntimeData data,
@@ -31,6 +32,7 @@ namespace Core.Game.Player {
 
             _holyStuffFactory.Create(sample.transform);
             sample.GetComponentInChildren<Hearing>().Init(Config, Data);
+            sample.GetComponent<Movement>().Direction = new InputService();
             
             Data.Player = sample.transform;
             _camera.Target = sample.transform;

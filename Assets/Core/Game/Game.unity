@@ -5939,10 +5939,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6846777993680734102, guid: 9c64b529c1208914da53e03446560409, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8175640301408171360, guid: 9c64b529c1208914da53e03446560409, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6344,10 +6340,6 @@ PrefabInstance:
     - target: {fileID: 2472121297423138949, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}
       propertyPath: m_Name
       value: Villager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6347485631834788970, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}
-      propertyPath: m_Mass
-      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
