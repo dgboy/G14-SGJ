@@ -16,10 +16,10 @@ namespace Core.Game.Enemy.Banshee {
             origin = Target = transform.position;
         }
         private void Update() {
-            bool inRange = Vector2.Distance(transform.position, Target) < 1f;
-            animator.Play(!inRange);
+            bool farAway = Vector2.Distance(transform.position, Target) > 1f;
+            animator.Play(farAway);
 
-            if (inRange)
+            if (farAway)
                 Move();
             else
                 Target = GetRandomPoint();
