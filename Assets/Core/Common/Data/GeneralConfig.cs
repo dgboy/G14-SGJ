@@ -1,23 +1,19 @@
-using Core.Game.Bonus;
-using Core.Game.Bullet;
+using System;
 using Core.Game.Common.Behaviors;
 using Core.Game.Enemy;
 using Core.Game.Enemy.Banshee;
 using Core.Game.Exodus;
-using Core.Game.Hit;
 using Core.Game.Map;
 using Core.Game.Player;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Core.Common.Data {
     [CreateAssetMenu(menuName = "Game/General", fileName = "General", order = 0)]
     public class GeneralConfig : ScriptableObject {
         public PlayerData player;
         public EnemyData enemy;
-        public BulletData bullet;
-        public HitData hit;
         public MapData map;
-        public BonusData bonus;
         public ExodusData exodus;
 
         public SoundFX sfx;
@@ -31,7 +27,7 @@ namespace Core.Common.Data {
         public Object villagerPrefab;
     }
     
-    [System.Serializable]
+    [Serializable]
     public class HearingData {
         public AudioClip[] low;
         public AudioClip[] middle;
