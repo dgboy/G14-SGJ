@@ -9,7 +9,7 @@ namespace Core.Game.UI {
 
         public UIDocument document;
         private VisualElement Root => document.rootVisualElement;
-        private Dictionary<ViewID, ViewContainer> Views { get; set; }
+        private Dictionary<ViewID, IView> Views { get; set; }
 
 
         public void Awake() {

@@ -16,8 +16,8 @@ namespace Core.Game.UI {
         [Inject] private IStateMachine StateMachine { get; set; }
         [Inject] private ExodusService Exodus { get; set; }
 
-        public Dictionary<ViewID, ViewContainer> Create() => new() {
-            [ViewID.HUD] = new ViewContainer(
+        public Dictionary<ViewID, IView> Create() => new() {
+            [ViewID.HUD] = new View(
                 "top-bar",
                 handlers: new List<IHandler> {
                     new VarText<int>("villagers-value", Data.PossessedVillagers),
@@ -26,7 +26,7 @@ namespace Core.Game.UI {
                     new SymbolBar("hearing-value", Data.HearingLevel, '>'),
                 }
             ),
-            [ViewID.DefeatModal] = new ViewContainer(
+            [ViewID.DefeatModal] = new View(
                 "defeat-modal",
                 handlers: new List<IHandler> {
                     new Text("title", Exodus.Title),

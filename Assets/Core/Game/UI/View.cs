@@ -4,8 +4,8 @@ using DG_Pack.UI.Toolkit;
 using UnityEngine.UIElements;
 
 namespace Core.Game.UI {
-    public class ViewContainer : Handler<VisualElement>, IView {
-        public ViewContainer(string name, List<IHandler> handlers = null) : base(name) {
+    public class View : Handler<VisualElement>, IView {
+        public View(string name, List<IHandler> handlers = null) : base(name) {
             Handlers = handlers ?? new List<IHandler>();
         }
 
