@@ -24,7 +24,7 @@ namespace Core.Game {
             builder.RegisterEntryPoint<VictorySystem>();
 
             builder.RegisterComponentInHierarchy<LevelContext>();
-            builder.RegisterComponentInHierarchy<UIHandler>();
+            builder.RegisterComponentInHierarchy<UIDocumentTree>();
             builder.RegisterComponentInHierarchy<SmoothCamera>().As<ICameraService>();
 
             builder.RegisterEntryPoint<GameStartup>();

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Core.Common.Data {
     public class LevelContext : MonoBehaviour {
-        public UIHandler ui;
+        public UIDocumentTree ui;
         public AudioSource musicSource;
         public PlayerContext player;
         public EnemyContext enemy;

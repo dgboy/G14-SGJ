@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 using VContainer;
 
 namespace Core.Game.UI {
-    public class UIHandler : MonoBehaviour {
+    public class UIDocumentTree : MonoBehaviour {
         [Inject] private UIFactory Factory { get; set; }
 
         public UIDocument document;
