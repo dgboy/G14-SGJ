@@ -13,14 +13,14 @@ namespace Core.Game.UI {
 
 
         public void Awake() {
-            Views = Factory.Create(Root);
+            Views = Factory.Create();
 
             foreach (var view in Views.Values)
-                view.Init();
+                view.Bind(Root);
         }
         private void OnDestroy() {
             foreach (var view in Views.Values)
-                view.Clear();
+                view.Unbind();
         }
 
         public void Show(ViewID id) {

@@ -8,7 +8,6 @@ using DG_Pack.UI.Toolkit.Elements.Input;
 using DG_Pack.UI.Toolkit.Elements.Style;
 using DG_Pack.UI.Toolkit.Elements.Text;
 using DG_Pack.UI.Toolkit.Elements.Transform;
-using UnityEngine.UIElements;
 using VContainer;
 
 namespace Core.Game.UI {
@@ -17,9 +16,9 @@ namespace Core.Game.UI {
         [Inject] private IStateMachine StateMachine { get; set; }
         [Inject] private ExodusService Exodus { get; set; }
 
-        public Dictionary<ViewID, ViewContainer> Create(VisualElement root) => new() {
+        public Dictionary<ViewID, ViewContainer> Create() => new() {
             [ViewID.HUD] = new ViewContainer(
-                root.Q("top-bar"),
+                "top-bar",
                 handlers: new List<IHandler> {
                     new VarText<int>("villagers-value", Data.PossessedVillagers),
                     new TimeText("lifetime-value", Data.LifeTime),
@@ -28,7 +27,7 @@ namespace Core.Game.UI {
                 }
             ),
             [ViewID.DefeatModal] = new ViewContainer(
-                root.Q("defeat-modal"),
+                "defeat-modal",
                 handlers: new List<IHandler> {
                     new Text("title", Exodus.Title),
                     new Text("last-message", Exodus.Message),
