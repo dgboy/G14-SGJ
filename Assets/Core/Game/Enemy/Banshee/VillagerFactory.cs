@@ -2,6 +2,7 @@ using Core.Common.Data;
 using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
+using Cooldown = Core.Game.Common.Cooldown;
 
 namespace Core.Game.Enemy.Banshee {
     public class VillagerFactory : MonoBehaviour, IFactory {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core {
+namespace Core.Common {
     public class Hider : MonoBehaviour {
         private void Start() => gameObject.SetActive(false);
     }

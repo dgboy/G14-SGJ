@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Core.Game {
+namespace Core.Game.Common {
     public class Cooldown {
         private readonly MonoBehaviour _runner;
         private Coroutine _current;

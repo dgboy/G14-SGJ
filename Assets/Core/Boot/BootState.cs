@@ -11,12 +11,8 @@ namespace Core.Boot {
 
         public async void Enter() {
             await Scene.Load(SceneID.Boot);
-            Initialize();
             State.Enter<HomeState>();
         }
         public void Exit() { }
-
-
-        private void Initialize() { }
     }
 }

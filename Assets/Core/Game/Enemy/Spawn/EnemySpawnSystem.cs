@@ -3,6 +3,7 @@ using System.Linq;
 using Core.Common;
 using Core.Common.Data;
 using Core.Game.Common.Factories;
+using DG_Pack.Base.Reactive;
 using Leopotam.EcsLite;
 using Leopotam.EcsLite.Di;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace Core.Game.Enemy.Spawn {
 
         private EnemyData Config => _config.Value.enemy;
         private EnemyContext Context => _context.Value.enemy;
-        private Observable<int> Counter => _data.Value.VillagerCounter;
+        private ReactiveToNew<int> Counter => _data.Value.VillagerCounter;
         private float _expired;
         private Transform _spawner;
         private Dictionary<EnemyType, EnemyUnitData> _units;

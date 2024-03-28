@@ -5,6 +5,7 @@ using Core.Common.Data;
 using Core.Common.Utils;
 using Core.Game.Common;
 using Core.Game.UI;
+using DG_Pack.Base.Reactive;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -19,9 +20,9 @@ namespace Core.Game.Exodus {
         public bool Has => Status != ExodusID.None;
         private Dictionary<ExodusID, ExodusStateData> States { get; set; }
         private ExodusID Status { get; set; } = ExodusID.None;
-        public Observable<string> Title { get; } = new("---");
-        public Observable<string> Message { get; } = new("---");
-        public Observable<Color> MessageColor { get; } = new(Color.white);
+        public ReactiveToNew<string> Title { get; } = new("---");
+        public ReactiveToNew<string> Message { get; } = new("---");
+        public ReactiveToNew<Color> MessageColor { get; } = new(Color.white);
 
 
         public void Initialize() =>

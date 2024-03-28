@@ -1,6 +1,6 @@
-using Core.Common;
 using Core.Common.Data;
 using Core.Game.Common.Behaviors;
+using DG_Pack.Base.Reactive;
 using DG.Tweening;
 using UnityEngine;
 
@@ -11,7 +11,7 @@ namespace Core.Game.Player {
         public HearingLevel[] levels;
 
         private RuntimeData _data;
-        private Observable<int> Level { get; set; }
+        private ReactiveToNew<int> Level { get; set; }
         public float Radius {
             get => radar.radius;
             set {
