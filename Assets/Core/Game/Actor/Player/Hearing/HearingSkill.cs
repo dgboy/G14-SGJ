@@ -5,7 +5,7 @@ using DG.Tweening;
 using UnityEngine;
 
 namespace Core.Game.Actor.Player.Hearing {
-    public class Hearing : MonoBehaviour {
+    public class HearingSkill : MonoBehaviour {
         public DrawRadar radar;
         public Transform mask;
         public HearingLevel[] levels;

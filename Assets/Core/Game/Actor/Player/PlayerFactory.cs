@@ -1,4 +1,5 @@
 using Core.Common.Data;
+using Core.Game.Actor.Player.Hearing;
 using Core.Game.Common.Systems;
 using DG_Pack.Camera;
 using UnityEngine;
@@ -31,7 +32,7 @@ namespace Core.Game.Actor.Player {
             sample.name = $"{sample.tag}";
 
             _holyStuffFactory.Create(sample.transform);
-            sample.GetComponentInChildren<Hearing.Hearing>().Init(Config, Data);
+            sample.GetComponentInChildren<HearingSkill>().Init(Config, Data);
             sample.GetComponent<Movement>().Direction = new InputService();
             
             Data.Player = sample.transform;
