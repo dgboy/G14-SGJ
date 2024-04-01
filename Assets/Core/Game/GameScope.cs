@@ -15,17 +15,19 @@ namespace Core.Game {
         protected override void Configure(IContainerBuilder builder) {
             builder.RegisterInstance(config);
             builder.Register<RuntimeData>(Lifetime.Scoped);
+
             builder.Register<MusicService>(Lifetime.Scoped);
-            builder.Register<ExodusService>(Lifetime.Scoped).AsSelf().As<IInitializable>();
+            builder.RegisterComponentInHierarchy<SmoothCamera>().As<ICameraService>();
 
             builder.Register<HolyStuffFactory>(Lifetime.Singleton);
             builder.Register<PlayerFactory>(Lifetime.Singleton);
+
+            builder.Register<ExodusService>(Lifetime.Scoped).AsSelf().As<IInitializable>();
             builder.RegisterEntryPoint<DefeatSystem>();
             builder.RegisterEntryPoint<VictorySystem>();
 
             builder.RegisterComponentInHierarchy<LevelContext>();
             builder.RegisterComponentInHierarchy<UIDocumentTree>();
-            builder.RegisterComponentInHierarchy<SmoothCamera>().As<ICameraService>();
 
             builder.RegisterEntryPoint<GameStartup>();
         }
