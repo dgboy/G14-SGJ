@@ -6,21 +6,22 @@ namespace Core.Game.Common.Behaviors {
         public LineRenderer lineDrawer;
         public float radius = 3f;
         public float thetaScale = 0.01f;
+
+        private const float Pivot = 0.5f;
         private int _size;
         private float _theta;
 
 
-        [Obsolete("Obsolete")]
         private void Update() {
             _theta = 0f;
             _size = (int)(1f / thetaScale + 1f);
-            lineDrawer.SetVertexCount(_size);
+            lineDrawer.positionCount = _size;
 
             for (int i = 0; i < _size; i++) {
                 _theta += (2.0f * Mathf.PI * thetaScale);
                 float x = radius * Mathf.Cos(_theta);
                 float y = radius * Mathf.Sin(_theta);
-                lineDrawer.SetPosition(i, transform.position + new Vector3(x, y, 0));
+                lineDrawer.SetPosition(i, transform.position + new Vector3(x, y + Pivot, 0));
             }
         }
     }

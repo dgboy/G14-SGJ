@@ -4,40 +4,27 @@ using Core.Game.Actor.Player.Weapon;
 using Core.Game.Common.Systems;
 using DG_Pack.Camera;
 using UnityEngine;
+using VContainer;
 
 namespace Core.Game.Actor.Player {
     public class PlayerFactory {
-        public PlayerFactory(
-            GeneralConfig config,
-            LevelContext context,
-            RuntimeData data,
-            HolyStuffFactory holyStuffFactory,
-            ICameraService camera
-        ) {
-            _camera = camera;
-            _holyStuffFactory = holyStuffFactory;
-            Config = config;
-            Context = context;
-            Data = data;
-        }
-
-        private GeneralConfig Config { get; }
-        private LevelContext Context { get; }
-        private RuntimeData Data { get; }
-        private readonly HolyStuffFactory _holyStuffFactory;
-        private readonly ICameraService _camera;
+        [Inject] private GeneralConfig Config { get; set; }
+        [Inject] private LevelContext Context { get; set; }
+        [Inject] private RuntimeData Data { get; set; }
+        [Inject] private HolyStuffFactory StuffFactory { get; set; }
+        [Inject] private ICameraService Camera { get; set; }
 
 
         public void Create() {
-            var sample = Object.Instantiate(Config.player.actor.prefab, Context.player.point);
+            var sample = (PlayerActor)Object.Instantiate(Config.player.actor.prefab, Context.player.point);
             sample.name = $"{sample.tag}";
 
-            _holyStuffFactory.Create(sample.transform);
+            StuffFactory.Create(sample.transform, sample.lightSpot.transform.position);
+            sample.GetComponentInChildren<Movement>().Direction = new InputService();
             sample.GetComponentInChildren<HearingSkill>().Init(Config, Data);
-            sample.GetComponent<Movement>().Direction = new InputService();
-            
+
             Data.Player = sample.transform;
-            _camera.Target = sample.transform;
+            Camera.Target = sample.transform;
         }
     }
 }
