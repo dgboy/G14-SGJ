@@ -1,5 +1,6 @@
 using Core.Common.Data;
 using Core.Game.Actor.Player.Hearing;
+using Core.Game.Actor.Player.Weapon;
 using Core.Game.Common.Systems;
 using DG_Pack.Camera;
 using UnityEngine;

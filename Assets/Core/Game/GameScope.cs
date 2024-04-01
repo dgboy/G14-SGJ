@@ -1,5 +1,6 @@
 using Core.Common.Data;
 using Core.Game.Actor.Player;
+using Core.Game.Actor.Player.Weapon;
 using Core.Game.Common;
 using Core.Game.Exodus;
 using Core.Game.UI;

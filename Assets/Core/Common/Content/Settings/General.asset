@@ -19,7 +19,7 @@ MonoBehaviour:
       health: 1
       cooldown: 2
     hearing:
-      level: 0
+      level: 1
       low:
       - {fileID: 8300000, guid: 26a9e99874a60f74dbddd83880744368, type: 3}
       - {fileID: 8300000, guid: 665c453ec8fc6d244aec404d2ee57f8f, type: 3}
@@ -59,7 +59,6 @@ MonoBehaviour:
         \u0430\u0433\u043E\u043D\u0438\u0438. \u0425\u0410-\u0425\u0410-\u0425\u0410!"
       messageColor: {r: 1, g: 0, b: 0, a: 1}
     lifetime: 5
-  holyStuffPrefab: {fileID: 4465485542589989536, guid: e3bbff536ca4e6046b3c8d0f1a4ac116, type: 3}
   bansheePrefab: {fileID: -4116448015841399692, guid: c63e573d1f1afe540853f493f15186a9, type: 3}
   villagerCounter: 10
   villagerPrefab: {fileID: 2472121297423138949, guid: 798e2836b9a19d448a253d98343f53a7, type: 3}

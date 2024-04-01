@@ -1,7 +1,7 @@
 using Core.Common.Data;
 using UnityEngine;
 
-namespace Core.Game.Actor.Player {
+namespace Core.Game.Actor.Player.Weapon {
     public class HolyStuffFactory {
         public HolyStuffFactory(GeneralConfig config) {
             Config = config;

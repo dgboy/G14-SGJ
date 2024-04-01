@@ -825,6 +825,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5490571774340099800, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5490571774340099800, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7640243723462226795, guid: 97e93de897be1a54692797df9220454e, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -845,13 +853,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7899305525176169736, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6563678281797693411, guid: 97e93de897be1a54692797df9220454e, type: 3}
+    - {fileID: 1459066545230102181, guid: 97e93de897be1a54692797df9220454e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 1719163332925258371}
     - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
       insertIndex: -1

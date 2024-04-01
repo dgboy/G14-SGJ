@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-namespace Core.Game.Actor.Player {
+namespace Core.Game.Actor.Player.Weapon {
     public class HolyStuff : MonoBehaviour {
         public new Light2D light;
         public new AudioSource audio;
