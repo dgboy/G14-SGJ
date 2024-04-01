@@ -4,8 +4,8 @@ using DG_Pack.Camera;
 using UnityEngine;
 
 namespace Core.Game.Player {
-    public class PlayerActorFactory {
-        public PlayerActorFactory(
+    public class PlayerFactory {
+        public PlayerFactory(
             GeneralConfig config,
             LevelContext context,
             RuntimeData data,
@@ -27,11 +27,11 @@ namespace Core.Game.Player {
 
 
         public void Create() {
-            var sample = Object.Instantiate(Config.player.tank.prefab, Context.player.point);
+            var sample = Object.Instantiate(Config.player.actor.prefab, Context.player.point);
             sample.name = $"{sample.tag}";
 
             _holyStuffFactory.Create(sample.transform);
-            sample.GetComponentInChildren<Hearing>().Init(Config, Data);
+            sample.GetComponentInChildren<Hearing.Hearing>().Init(Config, Data);
             sample.GetComponent<Movement>().Direction = new InputService();
             
             Data.Player = sample.transform;

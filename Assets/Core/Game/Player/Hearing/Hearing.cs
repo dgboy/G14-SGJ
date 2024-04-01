@@ -4,7 +4,7 @@ using DG_Pack.Base.Reactive;
 using DG.Tweening;
 using UnityEngine;
 
-namespace Core.Game.Player {
+namespace Core.Game.Player.Hearing {
     public class Hearing : MonoBehaviour {
         public DrawRadar radar;
         public Transform mask;
@@ -26,7 +26,7 @@ namespace Core.Game.Player {
             Level = _data.HearingLevel;
             Radius = Level.Value;
 
-            InitLevels(config);
+            InitLevels(config.player.hearing);
         }
         private void Update() {
             if (Input.mouseScrollDelta != Vector2.zero)
@@ -41,10 +41,10 @@ namespace Core.Game.Player {
             PlayVFX();
         }
 
-        private void InitLevels(GeneralConfig config) {
-            levels[0].Initialize(config.hearing.low, 0);
-            levels[1].Initialize(config.hearing.middle, 1);
-            levels[2].Initialize(config.hearing.high, 2);
+        private void InitLevels(HearingData config) {
+            levels[0].Initialize(config.low, 0);
+            levels[1].Initialize(config.middle, 1);
+            levels[2].Initialize(config.high, 2);
 
             // var clips = { config.hearing.low, config.hearing.middle, config.hearing.high };
             // for (int i = 0; i < levels.Length; i++) {

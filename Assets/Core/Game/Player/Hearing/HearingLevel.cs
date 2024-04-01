@@ -1,9 +1,8 @@
-using System;
 using Core.Game.Common;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Core.Game.Player {
+namespace Core.Game.Player.Hearing {
     public class HearingLevel : MonoBehaviour {
         public AudioSource source;
         public int index;

@@ -5,6 +5,6 @@ namespace Core.Game.Enemy {
     public class EnemyUnitData {
         public EnemyType type;
         public int score = 100;
-        public TankData tank;
+        public ActorData tank;
     }
 }

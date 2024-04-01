@@ -1,11 +1,16 @@
+using System;
+using Core.Game.Player.Hearing;
 using Core.Game.Tank;
+using UnityEngine;
 
 namespace Core.Game.Player {
-    [System.Serializable]
+    [Serializable]
     public class PlayerData {
-        public TankData tank;
+        public ActorData actor;
+        public HearingData hearing;
+
         public int liveCount;
         public float fearLevel;
-        public int hearingLevel;
+        public GameObject holyStuffPrefab;
     }
 }

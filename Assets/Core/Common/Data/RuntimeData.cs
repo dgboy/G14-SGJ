@@ -6,7 +6,7 @@ namespace Core.Common.Data {
     public class RuntimeData {
         public RuntimeData(GeneralConfig config) {
             FearLevel = new ReactiveToNew<float>(config.player.fearLevel);
-            HearingLevel = new ReactiveToNew<int>(config.player.hearingLevel);
+            HearingLevel = new ReactiveToNew<int>(config.player.hearing.level);
             LifeTime = new ReactiveToNew<TimeSpan>();
             VillagerCounter = new ReactiveToNew<int>(config.villagerCounter);
             PossessedVillagers = new ReactiveToNew<int>(config.villagerCounter);
