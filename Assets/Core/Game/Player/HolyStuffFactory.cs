@@ -1,7 +1,5 @@
 using Core.Common.Data;
-using Leopotam.EcsLite;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 namespace Core.Game.Player {
     public class HolyStuffFactory {
