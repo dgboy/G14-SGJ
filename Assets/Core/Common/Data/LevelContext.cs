@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Core.Game.Enemy;
-using Core.Game.Player;
+using Core.Game.Actor.Enemy;
+using Core.Game.Actor.Player;
 using Core.Game.UI;
 using UnityEngine;
 

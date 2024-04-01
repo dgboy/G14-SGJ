@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Game.Tank {
+namespace Core.Game.Actor {
     public class CharacterFactory {
         public Actor Create(ActorData data, Transform spawner, Vector2 direction) {
             var sample = Object.Instantiate(data.prefab, spawner.position, Quaternion.identity);

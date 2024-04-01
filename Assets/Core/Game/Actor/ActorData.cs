@@ -1,4 +1,4 @@
-namespace Core.Game.Tank {
+namespace Core.Game.Actor {
     [System.Serializable]
     public class ActorData {
         public Actor prefab;

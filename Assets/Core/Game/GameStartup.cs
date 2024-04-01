@@ -1,6 +1,6 @@
 using System;
 using Core.Common.Data;
-using Core.Game.Player;
+using Core.Game.Actor.Player;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;

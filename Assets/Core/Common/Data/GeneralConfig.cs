@@ -1,6 +1,6 @@
-using Core.Game.Enemy.Banshee;
+using Core.Game.Actor.Enemy.Banshee;
+using Core.Game.Actor.Player;
 using Core.Game.Exodus;
-using Core.Game.Player;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
