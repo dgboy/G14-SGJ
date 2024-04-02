@@ -7,7 +7,6 @@ namespace Core.Game.Common.Behaviors {
         public float radius = 3f;
         public float thetaScale = 0.01f;
 
-        private const float Pivot = 0.5f;
         private int _size;
         private float _theta;
 
@@ -21,7 +20,7 @@ namespace Core.Game.Common.Behaviors {
                 _theta += (2.0f * Mathf.PI * thetaScale);
                 float x = radius * Mathf.Cos(_theta);
                 float y = radius * Mathf.Sin(_theta);
-                lineDrawer.SetPosition(i, transform.position + new Vector3(x, y + Pivot, 0));
+                lineDrawer.SetPosition(i, transform.position + new Vector3(x, y, 0));
             }
         }
     }

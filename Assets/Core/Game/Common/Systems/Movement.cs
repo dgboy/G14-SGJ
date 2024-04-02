@@ -1,10 +1,10 @@
+using Core.Common.Utils;
 using Core.Game.Common.Input;
 using UnityEngine;
 
 namespace Core.Game.Common.Systems {
     public class Movement : MonoBehaviour {
         public Rigidbody2D body;
-        public new SpriteRenderer renderer;
         public float speed = 1f;
         public MovementAnimator animator;
 
@@ -17,7 +17,7 @@ namespace Core.Game.Common.Systems {
             animator.Play(Input.Direction != Vector2.zero);
 
             if (Input.Direction != Vector2.zero)
-                renderer.flipX = Input.Direction.x > 0;
+                body.transform.rotation = (Input.Direction * Vector2.left).ToRotation();
         }
     }
 }

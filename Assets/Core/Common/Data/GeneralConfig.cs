@@ -2,7 +2,6 @@ using Core.Game.Actor.Enemy.Banshee;
 using Core.Game.Actor.Player;
 using Core.Game.Exodus;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Core.Common.Data {
     [CreateAssetMenu(menuName = "Game/General", fileName = "General", order = 0)]
@@ -13,6 +12,6 @@ namespace Core.Common.Data {
         public Banshee bansheePrefab;
 
         public int villagerCounter = 10;
-        public Object villagerPrefab;
+        public GameObject villagerPrefab;
     }
 }

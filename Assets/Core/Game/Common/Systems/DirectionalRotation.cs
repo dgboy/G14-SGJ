@@ -6,6 +6,7 @@ namespace Core.Game.Common.Systems {
         public IInputService Input { get; set; }
 
         private Vector3 _point;
+        // public new SpriteRenderer renderer;
 
         private void Start() {
             _point = transform.localPosition;
@@ -17,6 +18,10 @@ namespace Core.Game.Common.Systems {
                 Rotate();
         }
 
-        private void Rotate() => transform.localPosition = new Vector3(Input.Direction.x <= 0f ? _point.x : -_point.x, _point.y);
+        private void Rotate() {
+            transform.localPosition = new Vector3(Input.Direction.x <= 0f ? _point.x : -_point.x, _point.y);
+            // if (Input.Direction != Vector2.zero)
+            //     renderer.flipX = Input.Direction.x > 0;
+        }
     }
 }
