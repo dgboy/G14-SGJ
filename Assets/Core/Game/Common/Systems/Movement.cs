@@ -1,3 +1,4 @@
+using Core.Game.Common.Input;
 using UnityEngine;
 
 namespace Core.Game.Common.Systems {
@@ -7,16 +8,16 @@ namespace Core.Game.Common.Systems {
         public float speed = 1f;
         public MovementAnimator animator;
 
-        public IDirection Direction { get; set; }
+        public IInputService Input { get; set; }
 
 
         public void FixedUpdate() {
-            body.velocity = Direction.Value * speed;
+            body.velocity = Input.Direction * speed;
 
-            animator.Play(Direction.Value != Vector2.zero);
+            animator.Play(Input.Direction != Vector2.zero);
 
-            if (Direction.Value != Vector2.zero)
-                renderer.flipX = Direction.Value.x > 0;
+            if (Input.Direction != Vector2.zero)
+                renderer.flipX = Input.Direction.x > 0;
         }
     }
 }
