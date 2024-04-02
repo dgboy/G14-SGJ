@@ -1,7 +1,6 @@
 using Core.Common.Data;
 using Core.Game.Common.Input;
 using Core.Game.Common.Systems;
-using Unity.VisualScripting;
 using UnityEngine;
 using VContainer;
 
@@ -17,8 +16,8 @@ namespace Core.Game.Actor.Player.Weapon {
             sample.name = $"Holy Stuff ({user.name})";
             sample.light.pointLightOuterRadius = 0.2f;
 
-            var directionalRotation = point.AddComponent<DirectionalRotation>();
-            directionalRotation.Input = Input;
+            // var directionalRotation = point.AddComponent<DirectionalRotation>();
+            // directionalRotation.Input = Input;
         }
     }
 }
