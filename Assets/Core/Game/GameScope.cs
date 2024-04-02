@@ -2,6 +2,8 @@ using Core.Common.Data;
 using Core.Game.Actor.Player;
 using Core.Game.Actor.Player.Weapon;
 using Core.Game.Common;
+using Core.Game.Common.Input;
+using Core.Game.Common.Systems;
 using Core.Game.Exodus;
 using Core.Game.UI;
 using DG_Pack.Camera;
@@ -18,6 +20,7 @@ namespace Core.Game {
             builder.Register<RuntimeData>(Lifetime.Scoped);
 
             builder.Register<MusicService>(Lifetime.Scoped);
+            builder.Register<InputService>(Lifetime.Scoped).As<IInputService>();
             builder.RegisterComponentInHierarchy<SmoothCamera>().As<ICameraService>();
 
             builder.Register<HolyStuffFactory>(Lifetime.Singleton);
