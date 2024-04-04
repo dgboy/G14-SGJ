@@ -21,7 +21,7 @@ namespace Core.Game.Actor.Player {
             var sample = (PlayerActor)Object.Instantiate(Config.player.actor.prefab, Context.player.point);
             sample.name = $"{sample.tag}";
 
-            StuffFactory.Create(sample.transform, sample.lightSpot);
+            // StuffFactory.Create(sample.transform, sample.lightSpot);
             sample.GetComponentInChildren<Movement>().Input = Input;
             sample.GetComponentInChildren<HearingSkill>().Init(Config, Data);
 
