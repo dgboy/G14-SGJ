@@ -8,11 +8,15 @@ namespace Core.Game.Actor.Enemy.Banshee {
         public new SpriteRenderer renderer;
         public new AudioSource audio;
         public RandomWalkingBehavior walkingBehavior;
+        public FollowingBehavior followingBehavior;
         private Sequence _currentAnimation;
         private RuntimeData _data;
 
 
-        public void Initialize(RuntimeData data) => _data = data;
+        public void Initialize(RuntimeData data) {
+            _data = data;
+            followingBehavior.Target = _data.Player;
+        }
 
         public void Banish() {
             if (!walkingBehavior.enabled)
@@ -22,8 +26,10 @@ namespace Core.Game.Actor.Enemy.Banshee {
             // IsPossessed = false;
             // audio.Stop();
             audio.enabled = false;
-            walkingBehavior.enabled = false;
             _data.SavedVillagers.Value++;
+            
+            walkingBehavior.enabled = false;
+            followingBehavior.enabled = true;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Core.Game.Actor.Enemy.Banshee {
         public Vector3 origin;
         public float speed = 5f;
 
-        private Vector3 Target { get; set; }
+        public Vector3 Target { get; set; }
 
 
         private void Start() {

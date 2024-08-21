@@ -141,13 +141,16 @@ PrefabInstance:
       addedObject: {fileID: 5355444213589560291}
     - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2664308034644620417}
-    - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2095556031289051687}
     - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7247633989745465267}
+    - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2664308034644620417}
+    - targetCorrespondingSourceObject: {fileID: 4002853912230916819, guid: 97e93de897be1a54692797df9220454e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2765363686604517643}
   m_SourcePrefab: {fileID: 100100000, guid: 97e93de897be1a54692797df9220454e, type: 3}
 --- !u!1 &2472121297423138949 stripped
 GameObject:
@@ -169,23 +172,7 @@ MonoBehaviour:
   renderer: {fileID: 8673294967209985886}
   audio: {fileID: 2095556031289051687}
   walkingBehavior: {fileID: 2664308034644620417}
---- !u!114 &2664308034644620417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2472121297423138949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74428aa20e094b34946dfdff161caee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7247633989745465267}
-  width: 7
-  depth: 7
-  origin: {x: 0, y: 0, z: 0}
-  speed: 5
+  followingBehavior: {fileID: 2765363686604517643}
 --- !u!82 &2095556031289051687
 AudioSource:
   m_ObjectHideFlags: 0
@@ -197,6 +184,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7812562685620941456, guid: 51b141bbe9693204cb3c076110f8c456, type: 2}
   m_audioClip: {fileID: 8300000, guid: 69c9c4bb89728a04e8c3f51e60cf5241, type: 3}
+  m_Resource: {fileID: 8300000, guid: 69c9c4bb89728a04e8c3f51e60cf5241, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: -0.5
@@ -297,6 +285,37 @@ MonoBehaviour:
   animator: {fileID: 9207005238375235901}
   idleClip: {fileID: 7400000, guid: c419213127dbdca4aa1ca2f87e72c560, type: 2}
   moveClip: {fileID: 7400000, guid: 6d5eaa93ca6bf4d4da758f8354e6057c, type: 2}
+--- !u!114 &2664308034644620417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472121297423138949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74428aa20e094b34946dfdff161caee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7247633989745465267}
+  width: 7
+  depth: 7
+  origin: {x: 0, y: 0, z: 0}
+  speed: 5
+--- !u!114 &2765363686604517643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472121297423138949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 320bd98ed90e4ed0b7dc5f19a6cffc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7247633989745465267}
+  speed: 5
 --- !u!212 &8673294967209985886 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7899305525176169736, guid: 97e93de897be1a54692797df9220454e, type: 3}
