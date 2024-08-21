@@ -23,7 +23,7 @@ namespace Core.Game.Actor.Enemy.Banshee {
             // audio.Stop();
             audio.enabled = false;
             walkingBehavior.enabled = false;
-            _data.PossessedVillagers.Value--;
+            _data.SavedVillagers.Value++;
         }
     }
 }

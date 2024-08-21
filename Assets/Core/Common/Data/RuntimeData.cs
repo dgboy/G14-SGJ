@@ -9,7 +9,7 @@ namespace Core.Common.Data {
             HearingLevel = new ReactiveToNew<int>(config.player.hearing.level);
             LifeTime = new ReactiveToNew<TimeSpan>();
             VillagerCounter = new ReactiveToNew<int>(config.villagerCounter);
-            PossessedVillagers = new ReactiveToNew<int>(config.villagerCounter);
+            SavedVillagers = new ReactiveToNew<int>();
         }
 
         public Transform Player { get; set; }
@@ -17,6 +17,6 @@ namespace Core.Common.Data {
         public ReactiveToNew<int> HearingLevel { get; }
         public ReactiveToNew<TimeSpan> LifeTime { get; }
         public ReactiveToNew<int> VillagerCounter { get; }
-        public ReactiveToNew<int> PossessedVillagers { get; }
+        public ReactiveToNew<int> SavedVillagers { get; }
     }
 }

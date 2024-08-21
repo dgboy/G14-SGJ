@@ -8,7 +8,7 @@ namespace Core.Game.Exodus {
         [Inject] private readonly ExodusService _exodus;
         [Inject] private readonly RuntimeData _data;
 
-        private bool HasPossessedVillagers => _data.PossessedVillagers.Value > 0;
+        private bool HasPossessedVillagers => _data.SavedVillagers.Value < 10;
         private Sequence _seq;
 
 

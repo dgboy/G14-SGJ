@@ -20,7 +20,7 @@ namespace Core.Game.UI {
             [ViewID.HUD] = new View(
                 "top-bar",
                 handlers: new List<IHandler> {
-                    new VarText<int>("villagers-value", Data.PossessedVillagers),
+                    new VarText<int>("villagers-value", Data.SavedVillagers),
                     new TimeText("lifetime-value", Data.LifeTime),
                     new TransformScale("fear-icon", Data.FearLevel),
                     new SymbolBar("hearing-value", Data.HearingLevel, '>'),
