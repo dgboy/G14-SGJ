@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Core.Common.Data;
 using Core.Game.Common;
 using DG.Tweening;
@@ -24,11 +25,11 @@ namespace Core.Game.Actor.Enemy.Banshee {
             if (!Target)
                 return;
 
-            if (Distance > _data.HearingLevel.Value * 2f) {
+            if (Distance > _data.HearingLevel.Value) {
                 Move();
             } else {
-                Scream();
                 Stay();
+                Scream();
             }
         }
 
@@ -38,15 +39,17 @@ namespace Core.Game.Actor.Enemy.Banshee {
             // var lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
             // transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5);
         }
-        private void Scream() {
+        private async void Scream() {
             audio.Play();
             PlayVFX();
+            await Task.Delay(500);
             _data.FearLevel.Value -= 0.2f;
         }
         private void PlayVFX() {
             _currentAnimation = DOTween.Sequence();
-            // sequence.AppendInterval(2.7f); //audio.clip.length
-            _currentAnimation.Append(transform.DOPunchScale(Vector2.one * 2f, 2.7f));
+            float duration = 2.7f;
+            _currentAnimation.Insert(0, transform.DOPunchScale(-Vector2.one * 0.5f, duration));
+            _currentAnimation.Insert(0, transform.DOPunchScale(Vector2.one * 1f, duration));
             _currentAnimation.AppendCallback(Banish);
         }
 
@@ -55,11 +58,15 @@ namespace Core.Game.Actor.Enemy.Banshee {
                 _currentAnimation.Kill();
 
             _currentAnimation = DOTween.Sequence();
-            _currentAnimation.Append(transform.DOPunchScale(-Vector2.one * Punch, BanishDuration));
-            // _currentAnimation.Insert(0, transform.DOPunchPosition(-Direction * Punch, BanishDuration));
+            _currentAnimation.Insert(0, transform.DOMove(Direction * Punch, BanishDuration).SetEase(Ease.OutBounce));
             _currentAnimation.Insert(0, renderer.DOFade(0f, BanishDuration));
-            _currentAnimation.AppendCallback(() => Destroy(gameObject));
+            _currentAnimation.AppendCallback(Die);
         }
-        private void Stay() => enabled = false;
+        private void Stay() {
+            enabled = false;
+        }
+        private void Die() {
+            Destroy(gameObject);
+        }
     }
 }

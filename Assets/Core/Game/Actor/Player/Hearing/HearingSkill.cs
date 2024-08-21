@@ -58,7 +58,7 @@ namespace Core.Game.Actor.Player.Hearing {
             }
         }
         private void PlayVFX() {
-            var sequence = DOTween.Sequence();
+            var sequence = DOTween.Sequence().SetEase(Ease.InOutSine);
             sequence.Append(DOTween.To(() => Radius, x => Radius = x, Level.Value, 0.5f));
             // sequence.Insert(0, radar._lineDrawer.DOColor(Color.white, new Color3(), 0.5f));
             // sequence.AppendInterval(1f);
