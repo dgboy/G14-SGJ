@@ -4,7 +4,7 @@ using UnityEngine;
 using VContainer;
 
 namespace Core.Game.Actor.Enemy.Banshee {
-    public class BansheeFactory : MonoBehaviour {
+    public class BansheeSpawner : MonoBehaviour {
         // public BansheesFactory(GeneralConfig config, RuntimeData data, MonoBehaviour runner) {
         //     Config = config;
         //     Data = data;

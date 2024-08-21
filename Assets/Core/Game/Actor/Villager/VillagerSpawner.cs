@@ -4,7 +4,7 @@ using VContainer;
 using Cooldown = Core.Game.Common.Cooldown;
 
 namespace Core.Game.Actor.Enemy.Banshee {
-    public class VillagerFactory : MonoBehaviour, IFactory {
+    public class VillagerSpawner : MonoBehaviour, IFactory {
         [Inject] private GeneralConfig Config { get; set; }
         [Inject] private RuntimeData Data { get; set; }
 
